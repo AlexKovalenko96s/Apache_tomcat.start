@@ -8,7 +8,26 @@
 <title>Server_first</title>
 </head>
 <body>
+	<%Integer hitsCount = (Integer)application.getAttribute("hitCounter");
+    if( hitsCount ==null || hitsCount == 0 ){
+       /* First visit */
+       out.println("Welcome to my website!");
+       hitsCount = 1;
+    }else{
+       /* return visit */
+       out.println("Welcome back to my website!");
+       hitsCount += 1;
+       out.println(hitsCount);
+    }
+    application.setAttribute("hitCounter", hitsCount);
+	%>
+	
+	<br>
 	Name: <jsp:getProperty property="name" name="person"/>
+	<br>
+	Password: <jsp:getProperty property="password" name="person"/>
+	<br>
+	Repeat password: <jsp:getProperty property="r_password" name="person"/>
 	<br>
 	Mail: <jsp:getProperty property="email" name="person"/>
 </body>
