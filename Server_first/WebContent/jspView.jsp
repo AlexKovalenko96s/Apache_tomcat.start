@@ -8,6 +8,7 @@
 <title>Server_first</title>
 </head>
 <body>
+
 	<%Integer hitsCount = (Integer)application.getAttribute("hitCounter");
     if( hitsCount ==null || hitsCount == 0 ){
        /* First visit */
